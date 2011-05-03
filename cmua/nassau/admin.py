@@ -30,13 +30,12 @@ class BlogAdmin(admin.ModelAdmin):
     
     #thanks biblion
     #this doesn't seem to work anymore?
-    #def formfield_for_dbfield(self, db_field, **kwargs):
-    #    request = kwargs.pop("request")
-    #    ff = super(BlogAdmin, self).formfield_for_dbfield(db_field, **kwargs)
-    #    import pdb; pdb.set_trace()
-    #    if db_field.name == "author":
-    #        ff.initial = request.user.id
-    #    return ff
+    def formfield_for_dbfield(self, db_field, **kwargs):
+        user = kwargs["request"].user
+        ff = super(BlogAdmin, self).formfield_for_dbfield(db_field, **kwargs)
+        if db_field.name == "author":
+            ff.initial = user.id
+        return ff
     
     def get_form(self, request, obj=None, **kwargs):
         kwargs.update({
