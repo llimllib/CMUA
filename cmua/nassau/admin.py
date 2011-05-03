@@ -2,8 +2,8 @@ from django.contrib import admin
 from django.conf import settings
 from django.utils.functional import curry
 
-from nassau.models import Blog, Category, Image
-from nassau.forms import AdminBlogForm, CategoryBlogForm
+from cmua.nassau.models import Blog, Category, Image
+from cmua.nassau.forms import AdminBlogForm, CategoryBlogForm
 
 class ImageInline(admin.TabularInline):
     model = Image
