@@ -93,9 +93,13 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.admin',
+    'django.contrib.staticfiles',
     'registration',
     'blog',
 )
+
+STATICFILES_DIRS = (root_join("../static"),)
+STATIC_URL = '/static/'
 
 try:
     from cmua.settings.local import *
