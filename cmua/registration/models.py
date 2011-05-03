@@ -45,3 +45,6 @@ class Register(models.Model):
 
     last_modified = models.DateField(auto_now=True)
     date_created = models.DateField(auto_now_add=True)
+
+    def __unicode__(self):
+        return u'%s %s' % (self.first_name, self.last_name)
