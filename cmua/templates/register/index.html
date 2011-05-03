@@ -84,12 +84,49 @@ href="mailto:cmua.summer08@comcast.net">email</a> or call Barry at 301-490-1860.
 {{ form.non_field_errors }}
 <table>
   {% for field in form %}
-    {% if field.field.required %}
-      <tr><td>{{ field.label }}</td><td>*</td><td>{{ field }}</td><td></tr>
-    {% else %}
-      <tr><td>{{ field.label }}</td><td></td><td>{{ field }}</td><td></tr>
+    {% if field.html_name != "i_agree_to_terms" %}
+      {% if field.field.required %}
+        <tr><td>{{ field.label }}</td><td>*</td><td>{{ field }}</td><td></tr>
+      {% else %}
+        <tr><td>{{ field.label }}</td><td></td><td>{{ field }}</td><td></tr>
+      {% endif %}
     {% endif %}
   {% endfor %}
+    <tr><td colspan=3><br><br>
+- SUMMER LEAGUE WAIVER -<br>
+PLEASE READ THIS IMPORTANT INFORMATION AND SIGN BELOW<br>
+I acknowledge that an Ultimate event is an extreme test of a person's physical
+and mental limits and carries with it the potential for death, serious injury
+and property loss.  I HEREBY ASSUME THE RISKS OF PARTICIPATING IN ULTIMATE
+GAMES, TOURNAMENTS, PRACTICES AND OTHER EVENTS. I certify that I am physically
+fit, have trained sufficiently for participation in Ultimate events and have
+not been advised against participation in Ultimate events by a qualified
+medical person.  I acknowledge that my statements on this Acknowledgment Waiver
+and Release Form are being accepted by the Central Maryland Ultimate
+Association (CMUA) in consideration for allowing me to become a member of the
+CMUA and are being relied upon by the CMUA and the various event sponsors,
+organizers and administrators in permitting me to participate in any CMUA
+sanctioned tournament, practice or other event.<br><br>
+
+In consideration for allowing
+me to become a member of the CMUA and allowing me to participate in CMUA
+sanctioned events, I hereby take the following action for myself, my executors,
+administrators, heirs, next of kin, successors and assigns: (a) I AGREE to
+abide by the rules of Ultimate and the Bylaws adopted by the CMUA and I
+acknowledge that my membership may be revoked or suspended for violations
+thereof; (b) I WAIVE, RELEASE AND DISCHARGE from any and all claims or
+liabilities for death, personal injury, property damage, theft or damages of
+any kind, which arise out of or relate to my participation in CMUA sanctioned
+events, THE FOLLOWING PERSONS OR ENTITIES: the CMUA, event sponsors, tournament
+directors, event producers, volunteers, all states, cities, counties or
+localities in which events or segments of events are held, and the officers,
+directors, employees, representatives and agents of any of the above; (c) I
+AGREE NOT TO SUE any of the persons or entities mentioned above for any of the
+claims or liabilities that I have waived, released or discharged herein; and
+(d) I INDEMNIFY AND HOLD HARMLESS the persons or entities mentioned above from
+any claims made or liabilities assessed against them as a result of my actions
+during a CMUA sanctioned event.<br><br>
+  <tr><td colspan=2>{{ form.i_agree_to_terms.label }}</td><td>{{ form.i_agree_to_terms }}</td></tr>
   <tr><td></td><td></td><td><input type="submit" value="Submit" /></td></tr>
 </table>
 

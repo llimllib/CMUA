@@ -41,5 +41,7 @@ class Register(models.Model):
 
     unable_to_play = models.TextField(verbose_name="Exceptions: Dates you'll be late or unable to play", null=True, blank=True)
 
+    i_agree_to_terms = models.BooleanField(verbose_name="I HEREBY AFFIRM THAT I AM EIGHTEEN (18) YEARS OF AGE OR OLDER, I HAVE READ THIS DOCUMENT AND I UNDERSTAND ITS CONTENTS.")
+
     last_modified = models.DateField(auto_now=True)
     date_created = models.DateField(auto_now_add=True)
