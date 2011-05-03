@@ -2,9 +2,6 @@ from django.db import models
 from django.db.models import Model, CharField, TextField, DateTimeField, ForeignKey, IntegerField, ManyToManyField, Manager, SlugField, ImageField
 from django.contrib.auth.models import User
 from django.core.urlresolvers import reverse
-from django.contrib import comments
-from django.contrib.comments import signals
-from django.contrib.comments.moderation import CommentModerator, moderator
 from django.contrib import messages
 
 from imagekit.models import ImageModel
@@ -85,11 +82,3 @@ class Image(ImageModel):
             return "{{ Image %d }}" % self.pk
         else:
             return "deleted image"
-
-class BlogModerator(CommentModerator):
-    email_notification = True
-
-    def moderate(self, comment, content_object, request):
-        return True
-
-moderator.register(Blog, BlogModerator)
