@@ -9,7 +9,7 @@ def index(request):
     if request.method == 'POST':
         form = RegistrationForm(request.POST)
         if form.is_valid():
-            #TODO: process the form
+            #TODO: process the form, .save() the instance (see ModelForm docs)
             return HttpResponseRedirect('/register/thanks.html')
     else:
         form = RegistrationForm()
