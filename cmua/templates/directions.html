@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div id="wrap">
+    <div id="side">
+    </div>
+    <script type="text/javascript">
+    maps = new Array();
+    maps['banneker'] = '<h3><a name="banneker">Banneker</a></h3><br />\n'
+            + '<iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps/ms?ie=UTF8&amp;hl=en&amp;t=h&amp;s=AARTsJpIxwe-8bS8nCHopUckrSTYlFtrfA&amp;msa=0&amp;msid=113945437447713014824.00044f85304f1760894ce&amp;ll=39.283194,-76.739931&amp;spn=0.011626,0.018239&amp;z=15&amp;output=embed"></iframe><br /><small><a href="http://maps.google.com/maps/ms?ie=UTF8&amp;hl=en&amp;t=h&amp;msa=0&amp;msid=113945437447713014824.00044f85304f1760894ce&amp;ll=39.283194,-76.739931&amp;spn=0.011626,0.018239&amp;z=15&amp;source=embed" style="color:#0000FF;text-align:left">View Larger Map</a></small>';
+    maps['ccbc'] = '<h3><a name="ccbc">CCBC</a></h3><br />\n'
+            + '<iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps/ms?ie=UTF8&amp;hl=en&amp;t=h&amp;s=AARTsJrWxR5ad1-7KQywf0NZNp9PGkPAIQ&amp;msa=0&amp;msid=113945437447713014824.00044f8518fbba689979a&amp;ll=39.248546,-76.73447&amp;spn=0.011632,0.018239&amp;z=15&amp;output=embed"></iframe><br /><small><a href="http://maps.google.com/maps/ms?ie=UTF8&amp;hl=en&amp;t=h&amp;msa=0&amp;msid=113945437447713014824.00044f8518fbba689979a&amp;ll=39.248546,-76.73447&amp;spn=0.011632,0.018239&amp;z=15&amp;source=embed" style="color:#0000FF;text-align:left">View Larger Map</a></small>';
+    maps['CatHigh'] = '<h3><a name="CatHigh">Catonsville High School</a></h3><br />\n'
+            + '<iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps/ms?ie=UTF8&amp;hl=en&amp;t=h&amp;s=AARTsJpvE5XfSNcZjg-pTdcw7FklIAKSbA&amp;msa=0&amp;msid=113945437447713014824.00044f8549f7d01a31b7d&amp;ll=39.26047,-76.727314&amp;spn=0.01163,0.018239&amp;z=15&amp;output=embed"></iframe><br /><small><a href="http://maps.google.com/maps/ms?ie=UTF8&amp;hl=en&amp;t=h&amp;msa=0&amp;msid=113945437447713014824.00044f8549f7d01a31b7d&amp;ll=39.26047,-76.727314&amp;spn=0.01163,0.018239&amp;z=15&amp;source=embed" style="color:#0000FF;text-align:left">View Larger Map</a></small>';
+    maps['CatPark'] = '<h3><a name="CatPark">Catonsville Community Park</a></h3><br />\n'
+            + '<iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps/ms?ie=UTF8&amp;hl=en&amp;t=h&amp;s=AARTsJrCs5_Dv91zNY4tREsXB6_NRKzW3w&amp;msa=0&amp;msid=113945437447713014824.00044f8563c817d84c6e2&amp;ll=39.281417,-76.751432&amp;spn=0.005813,0.00912&amp;z=16&amp;output=embed"></iframe><br /><small><a href="http://maps.google.com/maps/ms?ie=UTF8&amp;hl=en&amp;t=h&amp;msa=0&amp;msid=113945437447713014824.00044f8563c817d84c6e2&amp;ll=39.281417,-76.751432&amp;spn=0.005813,0.00912&amp;z=16&amp;source=embed" style="color:#0000FF;text-align:left">View Larger Map</a></small>';
+    maps['Westowne'] = '<h3><a name="Westowne">Westowne Elementary School</a></h3><br />\n'
+           + '<iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps/ms?ie=UTF8&amp;hl=en&amp;t=h&amp;s=AARTsJonWuoJi_pB-kT9OR8-bHlNxcQMBA&amp;msa=0&amp;msid=113945437447713014824.00045056d52716d7370a0&amp;ll=39.287025,-76.725544&amp;spn=0.011626,0.018239&amp;z=15&amp;output=embed"></iframe><br /><small><a href="http://maps.google.com/maps/ms?ie=UTF8&amp;hl=en&amp;t=h&amp;msa=0&amp;msid=113945437447713014824.00045056d52716d7370a0&amp;ll=39.287025,-76.725544&amp;spn=0.011626,0.018239&amp;z=15&amp;source=embed" style="color:#0000FF;text-align:left">View Larger Map</a></small>';
+    maps['Southwest'] = '<h3><a name="Southwest">Southwest Academy</a></h3><br />\n'
+        + '<iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps/ms?ie=UTF8&amp;hl=en&amp;t=h&amp;msa=0&amp;msid=113945437447713014824.00046b6a326ac34adb820&amp;ll=39.297692,-76.738644&amp;spn=0.005812,0.00912&amp;z=16&amp;output=embed"></iframe><br /><small>View <a href="http://maps.google.com/maps/ms?ie=UTF8&amp;hl=en&amp;t=h&amp;msa=0&amp;msid=113945437447713014824.00046b6a326ac34adb820&amp;ll=39.297692,-76.738644&amp;spn=0.005812,0.00912&amp;z=16&amp;source=embed" style="color:#0000FF;text-align:left">Southwest Academy</a> in a larger map</small>';
+    maps['Woodlawn'] = '<h3><a name="Woodlawn">Woodlawn High School</a></h3><br />\n'
+        + '<iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps/ms?ie=UTF8&amp;hl=en&amp;t=h&amp;msa=0&amp;msid=113945437447713014824.00046b6a50f2ea921470a&amp;ll=39.311623,-76.737614&amp;spn=0.011621,0.018239&amp;z=15&amp;output=embed"></iframe><br /><small>View <a href="http://maps.google.com/maps/ms?ie=UTF8&amp;hl=en&amp;t=h&amp;msa=0&amp;msid=113945437447713014824.00046b6a50f2ea921470a&amp;ll=39.311623,-76.737614&amp;spn=0.011621,0.018239&amp;z=15&amp;source=embed" style="color:#0000FF;text-align:left">Woodlawn High School</a> in a larger map</small>';
+    maps['Lansdowne'] = '<h3><a name="Lansdowne">Lansdowne Middle School</a></h3><br />\n'
+        + '<iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps/ms?ie=UTF8&amp;hl=en&amp;t=h&amp;msa=0&amp;msid=113945437447713014824.00046b6a5b88c5e4d11e1&amp;ll=39.248425,-76.652636&amp;spn=0.011632,0.018239&amp;z=15&amp;output=embed"></iframe><br /><small>View <a href="http://maps.google.com/maps/ms?ie=UTF8&amp;hl=en&amp;t=h&amp;msa=0&amp;msid=113945437447713014824.00046b6a5b88c5e4d11e1&amp;ll=39.248425,-76.652636&amp;spn=0.011632,0.018239&amp;z=15&amp;source=embed" style="color:#0000FF;text-align:left">Lansdowne Middle School</a> in a larger map</small>';
+
+
+    function showmap(loc) {
+        $("#map").html(maps[loc]);
+    }
+
+$(document).ready(function(){
+    if (document.location.hash.length > 0) {
+        //chop the hash mark off, so #banneker becomes banneker
+        showmap(window.location.hash.substr(1));
+    }
+});
+    </script>
+
+    <div id="content">
+        <table><tr><td valign="top" width="115px">
+        Fields:<br><br><ul>
+        <li><strong>A</strong> <a href="#ccbc" onclick="showmap('ccbc');">CCBC Catonsville</a>
+        <li><strong>B</strong> <a href="#banneker" onclick="showmap('banneker')">Banneker Rec. Center</a>
+        <li><strong>C</strong> <a href="#CatHigh" onclick="showmap('CatHigh');">Catonsville High School</a>
+        <li><strong>H</strong> <a href="#Woodlawn" onclick="showmap('Woodlawn');">Woodlawn High School</a>
+        <li><strong>L</strong> <a href="#Lansdowne" onclick="showmap('Lansdowne');">Lansdowne Middle School</a>
+        <li><strong>R</strong> <a href="#CatPark" onclick="showmap('CatPark');">Catonsville Community Park</a>
+        <li><strong>W</strong> <a href="#Westowne" onclick="showmap('Westowne');">Westowne Elementary School</a>
+        <li><strong>S</strong><a href="#Southwest" onclick="showmap('Southwest');">Southwest Academy</a>
+        </ul>
+        </td><td>
+        <div class="map" id="map" style="margin-left: 30px;">Click on a field to get a map, then click on the marker once the map comes up to get directions. Make sure you give it a second, sometimes google maps is a bit slow.</div>
+        </td></tr></table>
+    </div>
+</div>
+
+{% endblock %}
