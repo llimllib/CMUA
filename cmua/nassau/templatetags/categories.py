@@ -1,7 +1,7 @@
 from django import template
 from django.db.models import Count
 
-from nassau.models import Category
+from cmua.nassau.models import Category
 
 register = template.Library()
 

@@ -11,7 +11,7 @@ import datetime
 
 from tinymce.views import render_to_image_list
 
-from nassau.models import Blog, Image, Category
+from cmua.nassau.models import Blog, Image, Category
 from comment_post import save_comment
 
 def index(request):

@@ -1,7 +1,7 @@
 import datetime
 from haystack.indexes import *
 from haystack import site
-from nassau.models import Blog
+from cmua.nassau.models import Blog
 
 class BlogIndex(RealTimeSearchIndex):
     text = CharField(document=True, use_template=True, model_attr='content')
