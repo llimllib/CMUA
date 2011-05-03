@@ -3,11 +3,11 @@ from datetime import datetime
 from django import forms
 
 #XXX: what markup to use?
-from nassau.models import Blog
+from cmua.nassau.models import Blog
 
 from tinymce.widgets import TinyMCE
 
-from colorfield.fields import ColorWidget
+from cmua.colorfield.fields import ColorWidget
 
 #This is derived from the AdminPostForm in Biblion. Thanks Biblion guys!
 class AdminBlogForm(forms.ModelForm):
