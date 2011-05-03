@@ -78,17 +78,10 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.admin',
-    'django.contrib.staticfiles',
     'cmua.registration',
     'cmua.blog',
     'cmua.nassau',
     'cmua.colorfield',
 )
 
-STATICFILES_DIRS = (root_join("../static"),)
-STATIC_URL = '/static/'
-
-try:
-    from cmua.settings.local import *
-except ImportError:
-    pass
+execfile(root_join("settings/local.py"))
