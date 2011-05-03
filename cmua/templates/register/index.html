@@ -5,6 +5,9 @@
 <div id="wrap">
   <div id="content">
     <div id="registration">
+    {% if form.errors %}
+      <span class="errorlist">There were errors submitting your information; see below</span>
+    {% endif %}
     <p>
 The Central Maryland Ultimate Association (CMUA) will be offering two 
 separate leagues this summer.  Both will be co-ed and both will be open to all 
@@ -85,6 +88,9 @@ href="mailto:cmua.summer08@comcast.net">email</a> or call Barry at 301-490-1860.
 <table>
   {% for field in form %}
     {% if field.html_name != "i_agree_to_terms" %}
+      {% if field.errors %}
+        <tr><td colspan="3">{{ field.errors }}
+      {% endif %}
       {% if field.field.required %}
         <tr><td>{{ field.label }}</td><td>*</td><td>{{ field }}</td><td></tr>
       {% else %}

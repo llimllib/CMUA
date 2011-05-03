@@ -13,7 +13,7 @@ class Register(models.Model):
     phone1 = models.CharField(max_length=1024, verbose_name="Home Phone", null=True, blank=True)
     phone2 = models.CharField(max_length=1024, verbose_name="Cell Phone", null=True, blank=True)
     phone3 = models.CharField(max_length=1024, verbose_name="Work Phone", null=True, blank=True)
-    dob = models.DateField(verbose_name="Date of Birth")
+    dob = models.DateField(verbose_name="Date of Birth (mm/dd/yy)")
 
     GENDER_CHOICES = (
         ('M', 'Male'),

@@ -72,3 +72,5 @@ textarea{font-size: 12px; border: 1px solid #FFAAAA; padding: 2px; }
 
  #footer{float: left; width: 860px; background: url('../images/bottom.jpg') no-repeat; font-size: 11px; color: #330000; height: 50px;}
  	#footer p{position: relative; left: 290px; top: 5px; width: 600px; font-size: 10px; color: #AAAAAA;}
+
+.errorlist {font-weight: bold; font-size: 20px; color: #FF3333;}
