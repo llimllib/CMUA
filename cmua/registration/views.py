@@ -9,7 +9,8 @@ def index(request):
     if request.method == 'POST':
         form = RegistrationForm(request.POST)
         if form.is_valid():
-            #TODO: process the form, .save() the instance (see ModelForm docs)
+            form.save()
+
             name = form.data['first_name'] + " " + form.data["last_name"]
             return redirect('checkout', name=name)
     else:
