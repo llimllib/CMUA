@@ -26,7 +26,7 @@ class AdminBlogForm(forms.ModelForm):
     content = forms.CharField(
         widget=TinyMCE(
             attrs={'cols': 100, 'rows': 40}, 
-            mce_attrs={'theme': 'advanced', 'external_image_list_url': 'http://localhost:8000/blog/mce_list'}
+            mce_attrs={'theme': 'advanced'}
         )
     )
     
