@@ -84,4 +84,6 @@ INSTALLED_APPS = (
     'cmua.colorfield',
 )
 
+TINYMCE_JS_URL = "/static/tiny_mce/"
+
 execfile(root_join("settings/local.py"))
