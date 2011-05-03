@@ -76,12 +76,23 @@ game is not an appropriate sponsor. When registering, the underage player must
 list his/her sponsor on the "Optional Chum Declaration" line.  Additionally,
 he/she may not register online, since we require the parent's signature on the
 <a href="/static/2008Summer_Registration_Form.pdf">registration form.</a><br><br>
-Starred fields are required. Questions?  Contact us by <a 
+Red fields are required. Questions?  Contact us by <a 
 href="mailto:cmua.summer08@comcast.net">email</a> or call Barry at 301-490-1860.<br>
 </p>
+
 <form action="/register/" method="POST">{% csrf_token %}
-{{ form.as_p }}
-<input type="submit" value="Submit" />
+{{ form.non_field_errors }}
+<table>
+  {% for field in form %}
+    {% if field.field.required %}
+      <tr><td>{{ field.label }}</td><td>*</td><td>{{ field }}</td><td></tr>
+    {% else %}
+      <tr><td>{{ field.label }}</td><td></td><td>{{ field }}</td><td></tr>
+    {% endif %}
+  {% endfor %}
+  <tr><td></td><td></td><td><input type="submit" value="Submit" /></td></tr>
+</table>
+
   </div>
 </div>
 
