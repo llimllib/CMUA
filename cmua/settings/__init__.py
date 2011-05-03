@@ -81,6 +81,8 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'registration',
     'blog',
+    'nassau',
+    'colorfield',
 )
 
 STATICFILES_DIRS = (root_join("../static"),)
