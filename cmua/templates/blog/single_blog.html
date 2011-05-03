@@ -18,7 +18,7 @@
     <h2><a href="{{ blog.get_absolute_url }}">{{ blog.title }}</a></h2>
 	{% endif %}
     <div class="blog-blurb">
-        {{ blog.content|striptags|safe|truncatewords_html:45 }} {% if blog.content|wordcount > 45 %}<a href="{{ blog.get_absolute_url }}"><b>Read&nbsp;More</b></a> {% endif %}
+        {{ blog.content|safe }}
     </div>
 </div>
 
