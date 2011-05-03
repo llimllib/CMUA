@@ -2,8 +2,8 @@ from django.http import HttpResponseRedirect
 from django.template import RequestContext
 from django.shortcuts import render_to_response, redirect
 
-from registration.models import Register
-from registration.forms import RegistrationForm
+from cmua.registration.models import Register
+from cmua.registration.forms import RegistrationForm
 
 def index(request):
     if request.method == 'POST':
