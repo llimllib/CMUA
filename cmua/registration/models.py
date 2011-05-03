@@ -43,8 +43,8 @@ class Register(models.Model):
 
     i_agree_to_terms = models.BooleanField(verbose_name="I HEREBY AFFIRM THAT I AM EIGHTEEN (18) YEARS OF AGE OR OLDER, I HAVE READ THIS DOCUMENT AND I UNDERSTAND ITS CONTENTS.")
 
-    last_modified = models.DateField(auto_now=True)
-    date_created = models.DateField(auto_now_add=True)
+    last_modified = models.DateTimeField(auto_now=True)
+    date_created = models.DateTimeField(auto_now_add=True)
 
     def __unicode__(self):
         return u'%s %s' % (self.first_name, self.last_name)
