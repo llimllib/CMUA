@@ -11,7 +11,7 @@ from imagekit.models import ImageModel
 
 from datetime import datetime
 
-from colorfield.fields import ColorField
+from cmua.colorfield.fields import ColorField
 
 # Create your models here.
 class Blog(ImageModel):
@@ -43,7 +43,8 @@ class Blog(ImageModel):
 
     class IKOptions:
         # This inner class is where we define the ImageKit options for the model
-        spec_module = 'nassau.specs'
+        # TODO: remove this cmua.?
+        spec_module = 'cmua.nassau.specs'
         cache_dir = 'thumbs'
         image_field = 'thumbnail'
 	
@@ -75,7 +76,7 @@ class Image(ImageModel):
 
     class IKOptions:
         # This inner class is where we define the ImageKit options for the model
-        spec_module = 'nassau.specs'
+        spec_module = 'cmua.nassau.specs'
         cache_dir = 'thumbs'
         image_field = 'image_path'
     

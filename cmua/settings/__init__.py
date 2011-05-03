@@ -79,10 +79,10 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.admin',
     'django.contrib.staticfiles',
-    'registration',
-    'blog',
-    'nassau',
-    'colorfield',
+    'cmua.registration',
+    'cmua.blog',
+    'cmua.nassau',
+    'cmua.colorfield',
 )
 
 STATICFILES_DIRS = (root_join("../static"),)
