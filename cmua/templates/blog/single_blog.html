@@ -1,25 +1,6 @@
 <div class="blog-post">
-	<!-- TODO: only select the (somehow) designated primary image -->
-	{% if blog.thumbnail %}
-	<div class="blog-thumb"><img src="{{blog.thumbnail_image.url}}" align="top" alt="" /></div>
-	{% endif %}
-	{% if frontpage and forloop.first %}
-	<h2><a href="{{ blog.get_absolute_url }}">{{ blog.title }}</a></h2>
-	{% endif %}
-    <div class="blog-category">
-		{% if frontpage or not category %}
-        {% for cat in blog.category_set.all %}
-            <span class="blog-tag" style="background-color: {{ cat.color }}"><a href="/blog/category/{{ cat.name|urlencode }}">{{ cat.name }}</a></span>
-        {% endfor %}
-		{% endif %}
-        Posted by {{ blog.author.get_full_name }} on {{ blog.pub_date|date:"N jS, Y" }}
-    </div>
-	{% if not frontpage or not forloop.first %}
-    <h2><a href="{{ blog.get_absolute_url }}">{{ blog.title }}</a></h2>
-	{% endif %}
+	<h2>{{ blog.title }}</h2>
     <div class="blog-blurb">
         {{ blog.content|safe }}
     </div>
 </div>
-
-<div class="cf"></div>
