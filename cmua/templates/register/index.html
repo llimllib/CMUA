@@ -1,8 +1,88 @@
-<html><head><title>CMUA Registration</title>
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block content %}
+
+<div id="wrap">
+  <div id="content">
+    <div id="registration">
+    <p>
+The Central Maryland Ultimate Association (CMUA) will be offering two 
+separate leagues this summer.  Both will be co-ed and both will be open to all 
+skill levels.  Participate in one or both leagues for the same price ($20.00).<br>
+<h4>The Monday Night League - Our classic Co-ed summer league</h4>
+<ul><li>Who:
+    <ul><li>Adult Ultimate players of all skill levels and genders are invited to play.  There is limited space for both men and women in this league, so be sure to sign up early!
+    <li>Underage players may sign up only if they have a sponsor in the league.  See the “Under 18?” paragraph below for details. </ul>
+<li>What:
+    <ul><li>
+    <li> A 16 team mixed format league.
+    <li> Teams are formed via a draft of all the registered players by volunteer captains.
+    <li> The mixed format for this league is 5/2 or 4/3 - offense chooses.
+    <li> Two rounds are played every Monday night; plus each team will play one triple header during the regular season.
+    </ul>
+<li>Where:
+    <ul><li> Regular season games are played at fields in the Catonsville area. 
+    <li> Playoff games are also played in Catonsville, but some games will be played elsewhere (typically in Lansdowne and Columbia) in order to provide lighted fields for all games.</ul>
+<li>When:
+    <ul> 
+    <li> Registration is held during the month of May.  The Deadline is May 24, but this league always fills up prior to the deadline!
+    <li> Games are played from June to mid-August. 
+    <li> First round games are scheduled to start at 6:30 PM and the last round typically ends around 9 PM.  Longer rounds are played on fields with lights; hence plan on playing till 10 PM on those evenings.
+    </ul>
+</ul>
+
+<h4>The Wednesday Night League - AKA The Clique &amp; Pick League.</h4>  
+<ul>
+<li> Who:
+    <ul>
+    <li> Adult Ultimate players of all skill levels and genders are invited to play.
+        <ul>
+        <li> You may sign up as an individual and be drafted onto a team or
+        <li> You may sign up as a member of a clique by listing the clique name in the “Exceptions” box of the registration form.
+        <li> Underage players may sign up only if they have a sponsor in the league.  See the “Under 18?” paragraph below for details.
+        </ul>
+    </ul>
+<li> What:
+    <ul>
+    <li> An 8 to 10 team modified-mixed format league.
+    <li> Teams are formed via a two part process:
+        <ul>
+        <li> A clique of up to 5 players is formed prior to the draft.  (Someone from the clique must notify the league commissioner of their intent to create a team by the sign up deadline of May 24.)
+        <li> A leader from the clique attends the draft and picks the rest of the team.
+        </ul>
+    <li> The mixed format for this league is determined at game time each week and is based on the number of women in attendance that evening.
+    <li> One lengthy game is played each week, but an occasional double header may be required in order to make up a rained out game.
+    </ul>
+<li> Where: 
+    <ul>
+    <li> All games are played at fields in the Catonsville area. 
+    </ul>
+<li> When: 
+    <ul>
+    <li> Registration is held during the month of May.  The Deadline is May 24.
+    <li> Games are played from June to mid-August. 
+    <li> Games are scheduled to start at 6:30 PM and typically take two hours to play.
+    </ul>
+</ul>
+
+<strong>To register</strong>: simply fill out this form and click "submit registration".
+The next page will tell you how to pay either online or by check.<br><br>
+<strong>Under 18?</strong> The summer leagues offered by the CMUA are geared towards the adult
+player. Players under the age of 18 (as of June 1) may register for a Summer
+League only if they have an adult sponsor within that league. It is preferred
+that the sponsor be an immediate family member, however a family friend is
+acceptable. An adult player that the underage player just met at a pick-up
+game is not an appropriate sponsor. When registering, the underage player must
+list his/her sponsor on the "Optional Chum Declaration" line.  Additionally,
+he/she may not register online, since we require the parent's signature on the
+<a href="/static/2008Summer_Registration_Form.pdf">registration form.</a><br><br>
+Starred fields are required. Questions?  Contact us by <a 
+href="mailto:cmua.summer08@comcast.net">email</a> or call Barry at 301-490-1860.<br>
+</p>
 <form action="/register/" method="POST">{% csrf_token %}
 {{ form.as_p }}
 <input type="submit" value="Submit" />
-</body>
-</html>
+  </div>
+</div>
+
+{% endblock %}
