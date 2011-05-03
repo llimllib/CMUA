@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% load pagination %}
+
+{% block content %}
+<div id="wrap">
+  <div id="content">
+
+    {% for blog in blog_list %}
+		{% include "blog/single_blog.html" %}
+    {% endfor %}
+
+	{% if pages > 1 %}
+        <div class="blog-pagi">
+            <a href="/blog/archive?page=2" class="pagi-r">View Older Posts</a>
+        </div>
+    {% endif %}
+  </div>
+</div>
+
+{% endblock %}
