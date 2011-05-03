@@ -1,0 +1,14 @@
+DATABASES = {
+    'default': {
+        'ENGINE': 'mysql',
+        'NAME': 'mdultimate',
+        'USER': '',
+        'PASSWORD': '',
+        'HOST': 'localhost',
+        'PORT': '',
+    }
+}
+DEBUG=True
+
+# Make this unique, and don't share it with anybody.
+SECRET_KEY = '(&gl_zj=jg79f03^__6268%n+actkjj$g@z3!$!f$-)ohr+1l%'
