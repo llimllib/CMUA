@@ -21,10 +21,7 @@ def index(request):
 
 Thank you for registering for CMUA 2011.
 
-If you haven't yet paid for the league, you can do so by visiting
-http://md-ultimate.org/register/checkout.html/%s and clicking the
-google payment button or following the instructions for mailing in
-a check.
+If you haven't yet paid for the league, you can do so by visiting http://md-ultimate.org/register/checkout.html/%s and clicking the google payment button or following the instructions for mailing in a check.
 
 Have a great season.""" % (name, quote(name)),
                       'cmua@md-ultimate.org',
