@@ -9,7 +9,7 @@ urlpatterns = patterns('',
 
     (r'^directions$', direct_to_template, {'template': "directions.html"}),
 
-    # Uncomment the next line to enable the admin:
+    (r'^admin/(?P<app_label>[\d\w]+)/(?P<model_name>[\d\w]+)/csv/', 'cmua.csv_view.actions.admin_list_export'),
     (r'^admin/', include(admin.site.urls)),
 
     (r'^$', "cmua.nassau.views.index"),
