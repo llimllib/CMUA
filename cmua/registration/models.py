@@ -33,11 +33,14 @@ class Register(models.Model):
     category = models.CharField(max_length=1, choices=CATEGORY_CHOICES, verbose_name="Categorize Yourself")
 
     club_experience = models.CharField(max_length=1024, verbose_name="Last Team I Played For", null=True, blank=True)
+
     monday_league = models.BooleanField(verbose_name="Monday Night Co-ed League")
-    wednesday_league = models.BooleanField(verbose_name="Wednesday Night Co-ed League")
+    wednesday_league = models.BooleanField(verbose_name="Wednesday Night Co-ed Click & Pick League")
+    thursday_league = models.BooleanField(verbose_name="Thursday Night Open League")
 
     monday_chum_request = models.CharField(max_length=1024, verbose_name="Monday Night Chum Request", null=True, blank=True)
     wednesday_chum_request = models.CharField(max_length=1024, verbose_name="Wednesday Night Chum Request", null=True, blank=True)
+    thursday_chum_request = models.CharField(max_length=1024, verbose_name="Thursday Night Chum Request", null=True, blank=True)
 
     unable_to_play = models.TextField(verbose_name="Exceptions: Dates you'll be late or unable to play", null=True, blank=True)
 
