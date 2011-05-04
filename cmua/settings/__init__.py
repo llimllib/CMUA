@@ -79,7 +79,6 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.admin',
     'cmua.registration',
-    'cmua.blog',
     'cmua.nassau',
     'cmua.colorfield',
 )
