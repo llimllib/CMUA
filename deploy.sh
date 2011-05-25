@@ -7,4 +7,4 @@ rsync -avuz -e ssh --safe-links \
 --exclude ".git" \
 static/ cmua@md-ultimate.org:~/mdultimate/static/static
 
-ssh cmua@md-ultimate.org '~/mdultimate/init.sh restart'
+ssh -f cmua@md-ultimate.org '~/mdultimate/init.sh restart'
