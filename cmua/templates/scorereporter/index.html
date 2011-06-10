@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div id="wrap">
+  <div id="content">
+
+<form action="/report_score/" method="POST">{% csrf_token %}
+{{ form.non_field_errors }}
+<table>
+  {% for field in form %}
+    {% if field.html_name == "game1_points" %}
+      <tr><td><strong>Game 1</strong></td></tr>
+    {% endif %}
+
+    {% if field.html_name == "game2_points" %}
+      <tr><td><strong>Game 2</strong></td></tr>
+    {% endif %}
+
+    {% if field.errors %}
+      <tr><td colspan="3">{{ field.errors }}</td></tr>
+    {% endif %}
+    {% if field.field.required %}
+      <tr><td>{{ field.label }}</td><td>*</td><td>{{ field }}</td><td></tr>
+    {% else %}
+      <tr><td>{{ field.label }}</td><td></td><td>{{ field }}</td><td></tr>
+    {% endif %}
+  {% endfor %}
+  <tr><td colspan="3"><input type="submit" value="Submit" /></td></tr>
+</table>
+
+  </div>
+</div>
+
+{% endblock %}
