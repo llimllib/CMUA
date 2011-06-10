@@ -81,6 +81,7 @@ INSTALLED_APPS = (
     'cmua.registration',
     'cmua.nassau',
     'cmua.colorfield',
+    'cmua.scorereporter',
 )
 
 TINYMCE_JS_URL = "/static/tiny_mce/tiny_mce.js"
