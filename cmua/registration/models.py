@@ -1,6 +1,5 @@
 from django.db import models
 
-# Create your models here.
 class Register(models.Model):
     first_name = models.CharField(max_length=1024, verbose_name="First Name")
     last_name = models.CharField(max_length=1024, verbose_name="Last Name")

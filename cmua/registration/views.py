@@ -5,7 +5,6 @@ from django.shortcuts import render_to_response, redirect
 
 from urllib import quote
 
-from cmua.registration.models import Register
 from cmua.registration.forms import RegistrationForm
 
 def index(request):
