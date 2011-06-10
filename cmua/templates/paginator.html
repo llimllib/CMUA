@@ -1,0 +1,15 @@
+{% if pages > 1 %}
+{% spaceless %}
+<div class="blog-pagi"> 
+    {% if has_previous %}
+        <a class="pagi-l" href="?page={{ previous }}">Previous page</a>
+    {% endif %}
+
+    {% if has_next %}
+        <a class="pagi-r" href="?page={{ next }}">Next page</a>
+    {% endif %}
+  
+  </ul>
+</div>
+{% endspaceless %}
+{% endif %}

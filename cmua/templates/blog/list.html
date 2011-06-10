@@ -10,9 +10,7 @@
 		{% include "blog/single_blog.html" %}
     {% endfor %}
 
-    {% if pages > 1 %}
-        <a href="/blog/archive?page=2">View Older Posts</a>
-    {% endif %}
+    {% paginator 5 %}
   </div>
 </div>
 
