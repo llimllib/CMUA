@@ -41,6 +41,8 @@ class Game(Model):
                 self.team2_points = team1_points
                 self.team1_points = team2_points
 
+            self.save()
+
     def __unicode__(self):
         return "%s %s %s %s" % (self.team1, self.team1_points, self.team2, self.team2_points)
 
