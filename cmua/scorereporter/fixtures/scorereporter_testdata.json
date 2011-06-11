@@ -1,0 +1,206 @@
+[
+    {
+        "pk": 1, 
+        "model": "scorereporter.team", 
+        "fields": {
+            "color": "", 
+            "team_name": "", 
+            "captains": "Shannon Garrahy"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "scorereporter.team", 
+        "fields": {
+            "color": "", 
+            "team_name": "", 
+            "captains": "Keven/Newman"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "scorereporter.team", 
+        "fields": {
+            "color": "", 
+            "team_name": "", 
+            "captains": "Slocum/Stambaugh"
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "scorereporter.team", 
+        "fields": {
+            "color": "", 
+            "team_name": "", 
+            "captains": "Subrizi/Rinehart"
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "scorereporter.team", 
+        "fields": {
+            "color": "", 
+            "team_name": "", 
+            "captains": "Palin"
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "scorereporter.team", 
+        "fields": {
+            "color": "", 
+            "team_name": "", 
+            "captains": "Roth/Schulte"
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "scorereporter.team", 
+        "fields": {
+            "color": "", 
+            "team_name": "", 
+            "captains": "Conrad/Kaplowitz"
+        }
+    }, 
+    {
+        "pk": 8, 
+        "model": "scorereporter.team", 
+        "fields": {
+            "color": "", 
+            "team_name": "", 
+            "captains": "Kindred/Gayo"
+        }
+    }, 
+    {
+        "pk": 9, 
+        "model": "scorereporter.team", 
+        "fields": {
+            "color": "", 
+            "team_name": "", 
+            "captains": "Blatz"
+        }
+    }, 
+    {
+        "pk": 10, 
+        "model": "scorereporter.team", 
+        "fields": {
+            "color": "", 
+            "team_name": "", 
+            "captains": "Rosenblum/Sprechman"
+        }
+    }, 
+    {
+        "pk": 11, 
+        "model": "scorereporter.team", 
+        "fields": {
+            "color": "", 
+            "team_name": "", 
+            "captains": "Neill"
+        }
+    }, 
+    {
+        "pk": 12, 
+        "model": "scorereporter.team", 
+        "fields": {
+            "color": "", 
+            "team_name": "", 
+            "captains": "Matt Gordon"
+        }
+    }, 
+    {
+        "pk": 13, 
+        "model": "scorereporter.team", 
+        "fields": {
+            "color": "", 
+            "team_name": "", 
+            "captains": "Skunk/Mazen"
+        }
+    }, 
+    {
+        "pk": 14, 
+        "model": "scorereporter.team", 
+        "fields": {
+            "color": "", 
+            "team_name": "", 
+            "captains": "Mill/Lee"
+        }
+    }, 
+    {
+        "pk": 15, 
+        "model": "scorereporter.team", 
+        "fields": {
+            "color": "", 
+            "team_name": "", 
+            "captains": "Woody/Cox"
+        }
+    }, 
+    {
+        "pk": 16, 
+        "model": "scorereporter.team", 
+        "fields": {
+            "color": "", 
+            "team_name": "", 
+            "captains": "Jraffe/Brown"
+        }
+    }, 
+    {
+        "pk": 17, 
+        "model": "scorereporter.team", 
+        "fields": {
+            "color": "", 
+            "team_name": "", 
+            "captains": "Rico/Weir"
+        }
+    }, 
+    {
+        "pk": 18, 
+        "model": "scorereporter.team", 
+        "fields": {
+            "color": "", 
+            "team_name": "", 
+            "captains": "Walko/Kelly-Lieb"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "scorereporter.game", 
+        "fields": {
+            "team1_points": 1, 
+            "team2_points": 2, 
+            "team1": 1, 
+            "team2": 2
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "scorereporter.scorereport", 
+        "fields": {
+            "opponent1_points": 2, 
+            "game2_points": 3, 
+            "game1_points": 1, 
+            "report_date": "2011-06-09 23:09:05", 
+            "opponent2_points": 4, 
+            "game2": null, 
+            "game1": null, 
+            "reporting_team": 1, 
+            "opponent1": 2, 
+            "opponent2": 3
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "scorereporter.scorereport", 
+        "fields": {
+            "opponent1_points": 2, 
+            "game2_points": 3, 
+            "game1_points": 1, 
+            "report_date": "2011-06-09 22:59:10", 
+            "opponent2_points": 4, 
+            "game2": null, 
+            "game1": 1, 
+            "reporting_team": 1, 
+            "opponent1": 2, 
+            "opponent2": 3
+        }
+    }
+]
