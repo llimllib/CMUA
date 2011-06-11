@@ -3,6 +3,7 @@ from django.template import RequestContext
 from django.shortcuts import render_to_response, redirect
 
 from cmua.scorereporter.forms import ScoreReportForm
+from cmua.scorereporter.models import Team
 
 def index(request):
     if request.method == 'POST':
@@ -15,4 +16,11 @@ def index(request):
     print "form: --------", repr(form)
     return render_to_response("scorereporter/index.html",
                               {'form': form},
+                              context_instance=RequestContext(request))
+
+def standings(request):
+    standings = sorted((t.standings for t in Team.objects.all()), reverse=True)
+
+    return render_to_response("scorereporter/standings.html",
+                              {'standings': standings},
                               context_instance=RequestContext(request))
