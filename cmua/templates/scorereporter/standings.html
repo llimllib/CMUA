@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div id="wrap">
+  <div id="content">
+    <table>
+      <tr>
+        <th>Team</th>
+        <th>W</th>
+        <th>L</th>
+      </tr>
+    {% for pct, wins, losses, captains, team_name, id in standings %}
+      <tr>
+        <td><!-- TODO: <a href="/team/{{ id }}">{{ captains }}</a>-->{{ captains }}</td>
+        <td>{{ wins }}</td>
+        <td>{{ losses }}</td>
+      </tr>
+    {% endfor %}
+    </table>
+  </div>
+</div>
+
+{% endblock %}
