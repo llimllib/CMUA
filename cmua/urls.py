@@ -6,7 +6,8 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     (r'^register/', include('cmua.registration.urls')),
-    (r'^report_score/', include('cmua.scorereporter.urls')),
+    (r'^report_score/', "cmua.scorereporter.views.index"),
+    (r'^standings/', "cmua.scorereporter.views.standings"),
 
     (r'^directions$', direct_to_template, {'template': "directions.html"}),
 
