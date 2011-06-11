@@ -10,6 +10,24 @@ class Team(Model):
     def captain_or_name(self):
         return self.team_name if self.team_name else self.captains
 
+    @property
+    def all_games(self):
+        return self.team1.all() | self.team2.all()
+
+    @property
+    def standings(self):
+        wins = 0
+        losses = 0
+        for game in self.all_games:
+            if game.win(self):
+                wins += 1
+            else:
+                losses += 1
+        if wins or losses:
+            return (float(wins)/(wins+losses), wins, losses, self.captains, self.team_name, self.pk)
+        else:
+            return (0,0,0, self.captains, self.team_name, self.pk)
+
     def __unicode__(self):
         return self.captain_or_name()
 
@@ -29,6 +47,11 @@ class Game(Model):
     team2_points = IntegerField()
 
     objects = GameManager()
+
+    def win(self, team):
+        if self.team1 == team:
+            return self.team1_points > self.team2_points
+        return self.team1_points < self.team2_points
 
     def check_score(self, team1, team1_points, team2, team2_points):
         #if the score reports are different, favor the score report with the
