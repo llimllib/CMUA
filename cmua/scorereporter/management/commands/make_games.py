@@ -12,6 +12,8 @@ class Command(BaseCommand):
         #       try to find this game already reported and set game1=game
         #       otherwise create a new game
         #   repeat for game2
+        #
+        #TODO: handle team1 playing team2 a second time?
         for s in ScoreReport.objects.filter(game1__isnull=True):
             g = Game.objects.find_game(s.reporting_team, s.opponent1)
 
