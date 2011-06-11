@@ -173,6 +173,16 @@
     }, 
     {
         "pk": 2, 
+        "model": "scorereporter.game", 
+        "fields": {
+            "team1_points": 13, 
+            "team2_points": 1, 
+            "team1": 1, 
+            "team2": 3
+        }
+    }, 
+    {
+        "pk": 2, 
         "model": "scorereporter.scorereport", 
         "fields": {
             "opponent1_points": 2, 
