@@ -1,4 +1,5 @@
-from django.db.models import Model, CharField, ForeignKey, IntegerField, DateTimeField
+from django.db.models.query import QuerySet
+from django.db.models import Model, Manager, Q, CharField, ForeignKey, IntegerField, DateTimeField
 from django.contrib import admin
 
 class Team(Model):
@@ -12,7 +13,36 @@ class Team(Model):
     def __unicode__(self):
         return self.captain_or_name()
 
-admin.site.register(Team)
+class GameManager(Manager):
+    def find_game(self, team1, team2):
+        """return a game or None"""
+        game = QuerySet(self.model, using=self._db).filter(
+            Q(team1__exact=team1, team2__exact=team2) |
+            Q(team1__exact=team2, team2__exact=team1))
+        return game[0] if game else None
+
+class Game(Model):
+    team1 = ForeignKey(Team, related_name="team1")
+    team2 = ForeignKey(Team, related_name="team2")
+
+    team1_points = IntegerField()
+    team2_points = IntegerField()
+
+    objects = GameManager()
+
+    def check_score(self, team1, team1_points, team2, team2_points):
+        #if the score reports are different, favor the score report with the
+        #lesser score difference
+        if abs(team1_points - team2_points) < abs(self.team1_points - self.team2_points):
+            if team1 == self.team1:
+                self.team1_points = team1_points
+                self.team2_points = team2_points
+            else:
+                self.team2_points = team1_points
+                self.team1_points = team2_points
+
+    def __unicode__(self):
+        return "%s %s %s %s" % (self.team1, self.team1_points, self.team2, self.team2_points)
 
 class ScoreReport(Model):
     reporting_team = ForeignKey(Team, verbose_name="What team are you?", related_name="reporting_team")
@@ -25,6 +55,9 @@ class ScoreReport(Model):
 
     opponent1_points = IntegerField(verbose_name="How many points did your opponent score?")
     opponent2_points = IntegerField(verbose_name="How many points did your opponent score?")
+
+    game1 = ForeignKey(Game, blank=True, null=True, related_name="game1")
+    game2 = ForeignKey(Game, blank=True, null=True, related_name="game2")
 
     report_date = DateTimeField(auto_now_add=True)
 
