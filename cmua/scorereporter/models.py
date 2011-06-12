@@ -1,11 +1,30 @@
 from django.db.models.query import QuerySet
-from django.db.models import Model, Manager, Q, CharField, ForeignKey, IntegerField, DateTimeField
+from django.db.models import (Model, Manager, Q, CharField, ForeignKey, IntegerField,
+                              DateTimeField, BooleanField)
 from django.contrib import admin
+
+class League(Model):
+    name = CharField(max_length=1024)
+    year = CharField(max_length=4)
+    active = BooleanField()
+
+    SEASON_CHOICES = (
+        ("spring", "Spring"),
+        ("summer", "Summer"),
+        ("fall", "Fall"),
+        ("winter", "Winter"),
+    )
+    season = CharField(max_length=16, choices=SEASON_CHOICES)
+
+    def __unicode__(self):
+        return "%s, %s %s" % (self.name, self.season, self.year)
 
 class Team(Model):
     captains = CharField(max_length=1024, verbose_name="Captains")
     team_name = CharField(max_length=1024, verbose_name="Team Name", null=True, blank=True)
     color = CharField(max_length=1024, verbose_name="Color", null=True, blank=True)
+
+    league = ForeignKey(League)
 
     def captain_or_name(self):
         return self.team_name if self.team_name else self.captains
