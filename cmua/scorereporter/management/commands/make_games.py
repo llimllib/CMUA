@@ -15,6 +15,10 @@ class Command(BaseCommand):
         #
         #TODO: handle team1 playing team2 a second time?
         for s in ScoreReport.objects.filter(game1__isnull=True):
+            #skip games with 0 points each
+            if s.game1_points == 0 and s.opponent1_points == 0:
+                continue
+
             g = Game.objects.find_game(s.reporting_team, s.opponent1)
 
             if not g:
@@ -29,6 +33,9 @@ class Command(BaseCommand):
             s.save()
 
         for s in ScoreReport.objects.filter(game2__isnull=True):
+            #skip games with 0 points each
+            if s.game2_points == 0 and s.opponent2_points == 0:
+                continue
             g = Game.objects.find_game(s.reporting_team, s.opponent2)
 
             if not g:
