@@ -37,15 +37,18 @@ class Team(Model):
     def standings(self):
         wins = 0
         losses = 0
+        pd = 0
         for game in self.all_games:
             if game.win(self):
                 wins += 1
+                pd += game.pointdiff
             else:
                 losses += 1
+                pd -= game.pointdiff
         if wins or losses:
-            return (float(wins)/(wins+losses), wins, losses, self.captains, self.team_name, self.pk)
+            return (float(wins)/(wins+losses), pd, wins, losses, self.captains, self.team_name, self.pk)
         else:
-            return (0,0,0, self.captains, self.team_name, self.pk)
+            return (0,0,0,0, self.captains, self.team_name, self.pk)
 
     def __unicode__(self):
         return self.captain_or_name()
@@ -71,6 +74,10 @@ class Game(Model):
         if self.team1 == team:
             return self.team1_points > self.team2_points
         return self.team1_points < self.team2_points
+
+    @property
+    def pointdiff(self):
+        return abs(self.team1_points - self.team2_points)
 
     def check_score(self, team1, team1_points, team2, team2_points):
         #if the score reports are different, favor the score report with the
