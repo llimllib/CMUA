@@ -18,7 +18,7 @@ def index(request):
             send_mail("Thanks for registering with CMUA",
 """%s,
 
-Thank you for registering for a CMUA 2011 league.
+Thank you for registering for a CMUA 2012 league.
 
 If you haven't yet paid for the league, you can do so by visiting http://md-ultimate.org/register/checkout.html/%s and clicking the google payment button or following the instructions for mailing in a check.
 
