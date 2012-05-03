@@ -4,3 +4,6 @@ PIL==1.1.7
 django-imagekit==0.3.6
 django-tinymce==1.5.1a2
 wsgiref==0.1.2
+django_extensions
+south
+psycopg2
