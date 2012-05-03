@@ -6,10 +6,9 @@ class RegistrationForm(forms.ModelForm):
     def clean(self):
         monday = self.cleaned_data.get("monday_league")
         wednesday = self.cleaned_data.get("wednesday_league")
-        thursday = self.cleaned_data.get("thursday_league")
 
         errors = []
-        if not monday and not wednesday and not thursday:
+        if not monday and not wednesday:
             errors.append("You must select at least one league to play in")
 
         if not self.cleaned_data.get("i_agree_to_terms"):
